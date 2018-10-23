@@ -9,6 +9,10 @@ import Typography from '@material-ui/core/Typography';
 import CatalogComponent from './CatalogComponent';
 import Cart from './Cart';
 
+//
+// value is used to let us know what view to render
+//
+// 0 = SHOES, 1 = SOCKS, 2 = CART
 const TabContainer = ({ store, value, onChange }) => {
 
   return (

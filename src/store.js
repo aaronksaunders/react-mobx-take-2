@@ -84,6 +84,7 @@ export class Store {
 }
 
 decorate(Store, {
+  // OBSERVABLES
   cartItems: observable,
   products: observable,
   filter: observable,

@@ -3,7 +3,10 @@ import { observer, inject, Observer } from "mobx-react";
 
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography';
-
+//
+// value is used to let us know what view to render
+//
+// 0 = SHOES, 1 = SOCKS, 2 = CART
 const MenuButton = ({ store, value, onClick }) => {
 
   return (

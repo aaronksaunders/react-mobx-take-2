@@ -1,56 +1,53 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // MOBX
 import { inject } from "mobx-react";
-import DevTools from 'mobx-react-devtools';
-
+import DevTools from "mobx-react-devtools";
 
 // MATERIAL-UI
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 
 // COMPONENTS
-import MenuButton from './MenuButton'
-import TabContainer from './TabContainer'
-
+import MenuButton from "./MenuButton";
+import TabContainer from "./TabContainer";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 0
+      value: 0 // 0 = SHOES, 1 = SOCKS, 2 = CART
     };
   }
 
   handleChange = (event, value) => {
-    let { store } = this.props
+    let { store } = this.props;
     this.setState({ value });
     if (value === 0) {
-      store.showProduct('SHOES')
+      store.showProduct("SHOES");
     } else {
-      store.showProduct('SOCKS')
+      store.showProduct("SOCKS");
     }
   };
 
-
   render() {
-    let { value } = this.state
+    let { value } = this.state;
     return (
       <div>
-        <AppBar position="static" color="default" >
+        <AppBar position="static" color="default">
           <Toolbar>
             <Typography variant="title" color="inherit" style={{ flexGrow: 1 }}>
               Mobx React Sample
             </Typography>
-            <MenuButton value={value} onClick={(v) => this.setState(v)} />
+            <MenuButton value={value} onClick={v => this.setState(v)} />
           </Toolbar>
         </AppBar>
         <TabContainer value={value} onChange={this.handleChange} />
         <DevTools />
       </div>
-    )
+    );
   }
 }
 
-export default inject('store')(Home)
+export default inject("store")(Home);
