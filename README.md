@@ -1,8 +1,7 @@
 # react-mobx-take-2
-react-mobx-take-2 from stackblitz, but with no decorators
-
-
-https://mobx.js.org/best/decorators.html
+ - react-mobx-take-2 from stackblitz, but with no decorators
+ - Integrating [React Testing Library](https://github.com/kentcdodds/react-testing-library#readme)
+ - Mobx Without Decorators from [Mobx Documentation](https://mobx.js.org/best/decorators.html)
 
 Original store.js
 
@@ -199,3 +198,6 @@ decorate(Store, {
   clearCart : action,
 });
 ```
+
+Working with Testing Library
+
