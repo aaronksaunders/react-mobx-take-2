@@ -15,7 +15,7 @@ const MenuButton = ({ store, value, onClick }) => {
         value !== 2 &&
         <Button color="inherit"
           onClick={() => onClick({ value: 2 })}>
-          <Observer render={() => <>Cart ({store.cartSize})</>} />
+          <Observer render={() => <span data-testid="count-value">Cart ({store.cartSize})</span>} />
         </Button>
       }
       {
