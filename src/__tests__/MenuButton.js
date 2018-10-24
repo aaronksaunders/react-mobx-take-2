@@ -27,7 +27,7 @@ test("shows 0", () => {
     <MenuButton value={0} />
   );
 
-  expect(getByTestId("count-value").textContent).toBe("Cart (0)");
+  expect(getByTestId("cart-size-value").textContent).toBe("Cart (0)");
 });
 
 // SHOW CART w/ONE ITEM FROM CLICKING ON CATALOG LIST
@@ -37,7 +37,7 @@ test("shows adding item to cart", () => {
   );
 
   fireEvent.click(getByText(/10-shoes/i));
-  expect(getByTestId("count-value").textContent).toBe("Cart (1)");
+  expect(getByTestId("cart-size-value").textContent).toBe("Cart (1)");
 });
 
 // SHOW EMPTY CART w/ONE ITEM REMOVED FROM CLICKING ON CART LIST
@@ -47,7 +47,7 @@ test("shows removing item from cart", async () => {
   );
 
   fireEvent.click(getByText(/10-shoes/i));
-  expect(getByTestId("count-value").textContent).toBe("Cart (1)");
+  expect(getByTestId("cart-size-value").textContent).toBe("Cart (1)");
   fireEvent.click(getByText(/Cart/i));
 
   const cartNode = await waitForElement(
@@ -57,5 +57,5 @@ test("shows removing item from cart", async () => {
   expect(cartNode).toBeTruthy();
   fireEvent.click(getByText(/10-shoes/i));
   fireEvent.click(getByText(/back/i));
-  expect(getByTestId("count-value").textContent).toBe("Cart (0)");
+  expect(getByTestId("cart-size-value").textContent).toBe("Cart (0)");
 });
